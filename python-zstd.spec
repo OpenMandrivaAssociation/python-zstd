@@ -8,7 +8,7 @@ Summary:        Zstd Bindings for Python
 License:        BSD
 URL:            https://github.com/sergey-dryabzhinsky/python-zstd
 Source0:        https://files.pythonhosted.org/packages/source/z/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
-BuildArch:      noarch
+
 BuildSystem:	python
 BuildRequires:  pkgconfig(python3)
 BuildRequires:  python3dist(setuptools)
