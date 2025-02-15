@@ -18,5 +18,5 @@ BuildRequires:  pkgconfig(libzstd)
 Simple Python bindings for the Zstd compression library.
 
 %files
-%{python_sitelib}/%{pypi_name}/
-%{python_sitelib}/%{pypi_name}-%{version}.dist-info
+#{python_sitelib}/%{pypi_name}/
+#{python_sitelib}/%{pypi_name}-%{version}.dist-info
