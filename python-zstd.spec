@@ -1,14 +1,13 @@
-%global pypi_name zstd
+%global module zstd
 
-Name:           python-%{pypi_name}
-Version:        1.5.7.2
+Name:           python-zstd
+Version:        1.5.7.3
 Release:        1
 Group:          Development/Python
 Summary:        Zstd Bindings for Python
-License:        BSD
+License:        BSD-2-Clause
 URL:            https://github.com/sergey-dryabzhinsky/python-zstd
-Source0:        https://files.pythonhosted.org/packages/source/z/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
-
+Source0:        https://files.pythonhosted.org/packages/source/z/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 BuildSystem:	python
 BuildRequires:	pkgconfig
 BuildRequires:  pkgconfig(python)
@@ -18,6 +17,14 @@ BuildRequires:  python%{pyver}dist(setuptools)
 %description
 Simple Python bindings for the Zstd compression library.
 
+%prep -a
+# Remove bundled egg-info
+rm -rf src/%{module}.egg-info
+
+%build -p
+export LDFLAGS="%{optflags} -lpython%{pyver}"
+
 %files
-%{python_sitearch}/%{pypi_name}.cpython*
-%{python_sitearch}/%{pypi_name}-%{version}-py*.egg-info
+%license LICENSE
+%{python_sitearch}/%{module}.cpython*.so
+%{python_sitearch}/%{module}-%{version}-py%{pyver}.egg-info
