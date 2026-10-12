@@ -2,7 +2,7 @@
 
 Name:           python-zstd
 Version:        1.5.7.3
-Release:        1
+Release:        2
 Group:          Development/Python
 Summary:        Zstd Bindings for Python
 License:        BSD-2-Clause
